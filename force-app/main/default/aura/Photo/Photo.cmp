@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="photo" type="String" default="" />
+    <aura:dependency resource="markup://c:FaceHalo" />
+    
+    <aura:registerEvent name="faceDetectedEvent" type="c:FaceDetectedEvent"/>
+    <aura:handler name="faceDetectedEvent" action="{!c.handleFaceDetectedEvent}" />
+    <span aura:id="photoContainer"> 
+        <img aura:id="photo" src="{!v.photo}" />
+        {!v.body}
+    </span>
+</aura:component>

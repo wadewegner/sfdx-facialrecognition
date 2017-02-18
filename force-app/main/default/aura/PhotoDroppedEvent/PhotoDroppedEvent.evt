@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION" 
+    description="A photo has been dropped onto the drop zone"
+            access="global ">
+    <aura:attribute name="photoData" 
+        type="String"
+        description="A base64 representation of the image data, ready to be used in an img tag via myImage.src = photoData" />
+</aura:event>

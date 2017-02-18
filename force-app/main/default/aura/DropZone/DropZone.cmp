@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:registerevent name="photoDroppedEvent" type="c:PhotoDroppedEvent" />
+    <div aura:id="photoDropZone" class="drop_zone">Drop your image here</div>
+</aura:component>

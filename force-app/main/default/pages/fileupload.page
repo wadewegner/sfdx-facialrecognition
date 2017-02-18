@@ -1,0 +1,73 @@
+<apex:page id="uploadImagePage" standardController="Contact" extensions="Contactsextension">
+
+	<style type="text/css">
+		.pic {
+			background-color : #F3F3EC;
+			border:2px solid #E3DEB8;
+			height:100px;
+			/*margin :15px auto;*/
+			padding:5px;
+			width:100px;
+			margin:20px;
+		}
+		.buttons , .input { 
+			margin:20px; 
+		}
+	</style>
+
+	<script>
+		function verifyNameLength(){
+			var textVal = document.getElementsByName('uploadImagePage:uploadAttachment:newAttach:inputFile:file')[0].value;
+			
+			if( textVal != "" ) 	{
+				var browser = navigator.userAgent;
+				var fileName = textVal;
+				
+				if( browser.search( 'MSIE' ) > 0 ) {
+					var index 		= textVal.lastIndexOf( '\\' );
+					fileName 		= textVal.substring( index +1);
+				} 
+				
+				if( fileName.length < 70) {
+					return true;
+				};
+			};
+			if( textVal == "" )		{
+				alert( 'Please select an image to upload' );
+			} else {
+				alert( 'The file name must be 70 characters maximum' );
+			}
+			document.getElementById('uploadImagePage:uploadAttachment').reset();
+			return false;
+		}
+	</script>
+	
+	<apex:form id="uploadAttachment">
+	
+		<apex:outputpanel styleClass="pic" id="image" layout="block">
+			 <apex:image value="{!URLFOR($Resource.PictureUploader, '/images/unknownperson.jpg')}" rendered="{!NOT( hasPicture )}" height="100" width="100"/>
+	   		 <apex:image value="/servlet/servlet.FileDownload?file={!file.Id}" rendered="{!hasPicture}" height="100" width="100"/>
+		</apex:outputpanel>
+		
+		<div class="input">
+			<b>1. Select the File</b> :	Type the path of the file or click the Browse button to find the file.<br/>
+			<apex:inputFile value="{!newAttach.Body}" 
+				id="newAttach" 
+				styleclass="newAttach" 
+				contentType="{!newAttach.ContentType}" 
+				filename="{!newAttach.Name}" 
+				fileSize="{!newAttach.BodyLength}" />
+			<br/>
+			<apex:outputText value="{!error}" escape="false" styleClass="errorMsg"/> 
+		</div>
+		
+		<div class="buttons">
+			<b>2. Click the "Upload" button or "Delete" button in order to delete the current picture </b><br/>
+			<apex:commandButton id="Accept" action="{!uploadAction}" value="Upload" onclick="return verifyNameLength();"></apex:commandButton>
+	        <apex:commandButton id="Delete" action="{!deleteAction}" value="Delete" rendered="{!hasPicture}" onclick="return confirm('Are you sure you want to delete the current image?')"></apex:commandButton>
+	        <apex:commandButton id="Cancel" action="{!cancel}" value="Cancel"></apex:commandButton>
+		</div> 
+		
+	</apex:form>
+	
+</apex:page>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>37.0</apiVersion>
+    <description>An app that allows you to drag-n-drop an image onto the page. It then automatically tries to figure out where the faces are.
+And allows you assign new contacts to them (with profile photos being saved as part of the process).</description>
+</AuraDefinitionBundle>

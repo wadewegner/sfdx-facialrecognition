@@ -1,0 +1,24 @@
+<aura:component >
+    <aura:attribute name="contactId" type="String" description="The ID of the newly created contact" />
+    <aura:attribute name="firstName" type="String" description="The first name of the contact" />
+    <aura:attribute name="lastName" type="String" description="The last name of the contact" />
+    <aura:attribute name="accountName" type="String" description="The name of the account" />
+    <aura:attribute name="faceData" type="String" description="The image data for the cropped face" />
+
+    <div class="slds-media slds-tile">
+        <div class="slds-media__figure">
+            <span class="slds-avatar slds-avatar--large"> <img class="contact" src="{!v.faceData}" />
+            </span>
+        </div>
+        <div class="slds-media__body">
+            <p class="slds-tile__title slds-truncate slds-text-heading--medium">
+                <a href="javascript:void(0);">{!v.firstName}&nbsp;{!v.lastName}</a>
+            </p>
+            <div class="slds-tile__detail slds-text-body--regular">
+                <ul class="slds-list--horizontal slds-has-dividers">
+                    <li class="slds-truncate slds-list__item">{!v.accountName}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aura:component>

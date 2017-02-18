@@ -1,0 +1,10 @@
+<aura:event type="COMPONENT" description="A face has been detected in the dropped image" access="global ">
+    <aura:attribute name="photoId" type="String"
+        description="The globalId for the photo component where this face was detected" />
+    <aura:attribute name="width" type="Integer" description="Width of the face" />
+    <aura:attribute name="height" type="Integer" description="Height of the face"/>
+    <aura:attribute name="relLeft" type="Integer" description="Left position of the face, relative to the page"/>
+    <aura:attribute name="relTop" type="Integer" description="Top position of the face, relative to the page"/>
+    <aura:attribute name="faceLeft" type="Integer" description="Left position of the face, relative to the photo" />
+    <aura:attribute name="faceTop" type="Integer" description="Top positioon of the face, relative to the photo"/>
+</aura:event>

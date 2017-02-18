@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="photoId" type="String" />
+    <aura:attribute name="width" type="Integer" />
+    <aura:attribute name="height" type="Integer" />
+    <aura:attribute name="relLeft" type="Integer" />
+    <aura:attribute name="relTop" type="Integer" />
+    <aura:attribute name="faceLeft" type="Integer" />
+    <aura:attribute name="faceTop" type="Integer" />
+
+    <aura:registerevent name="contactCreatedEvent" type="c:ContactCreatedEvent" />
+
+    <div aura:id="faceHalo" class="rect" ondblclick="{!c.createContact}">
+        <div class="arrow" />
+        <ui:inputText aura:id="faceName" class="nameForm" placeholder="Firstname Lastname" />
+        <ui:inputText aura:id="accountName" class="accountForm" placeholder="Account Name" />
+    </div>
+</aura:component>

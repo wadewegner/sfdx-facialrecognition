@@ -1,0 +1,8 @@
+<aura:component >
+    <ltng:require scripts="{!join(
+        ',',
+        $Resource.Tracking + '/tracking.js',
+        $Resource.Tracking + '/data/face.js')}" />
+    <aura:handler event="c:PhotoDroppedEvent" action="{!c.handlePhotoDroppedEvent}" />
+    {!v.body}
+</aura:component>

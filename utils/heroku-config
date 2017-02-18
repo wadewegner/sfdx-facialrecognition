@@ -1,0 +1,4 @@
+stagingName=sfdx-facialrecognition-staging
+prodName=sfdx-facialrecognition
+pipelineName=sfdx-facialrecognition
+repo=wadewegner/sfdx-facialrecognition
