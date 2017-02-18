@@ -1,4 +1,7 @@
-stagingName=sfdx-facialrecognition-staging
-prodName=sfdx-facialrecognition
 pipelineName=sfdx-facialrecognition
-repo=wadewegner/sfdx-facialrecognition
+stagingName=$pipelineName-staging
+prodName=$pipelineName
+repo=wadewegner/$pipelineName
+prodUsername=wade.wegner-vhqe@force.com
+testUsername=wade.wegner-zyuj@force.com
+hubUsername=wade.wegner-swba@force.com
