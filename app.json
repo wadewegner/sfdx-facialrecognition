@@ -8,7 +8,7 @@
         "salesforcedx"
     ],
     "addons": [
-        "salesforce"
+        "salesforce:standard"
     ],
     "buildpacks": [
         {
